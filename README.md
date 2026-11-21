@@ -45,3 +45,5 @@ Same data, uncompressed and smaller, for tools that can only read plain text.
 ## CUSIP numbers per company (folder `match`)
 
 `cik_cusip6_history.csv` lists, per SEC company number, each 6-character CUSIP (issuer part) found on its ownership filings (Schedules 13G and 13D): the newest filing and up to three earlier ones. `cik_cusip_history_filings.csv` names the filings read. A company can have several rows because CUSIPs change over time.
+
+`match/cik_sic.csv` gives each company's industry code (SIC) as shown on its most recent report in the data.
