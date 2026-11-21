@@ -41,3 +41,7 @@ Same data, uncompressed and smaller, for tools that can only read plain text.
 `cik_ticker_candidates.csv` links SEC company numbers to ticker candidates taken from the leading letters of each report's XBRL file name. Columns: cik, ticker, first and last (dates of the first and last report using that name), last_any (the company's last report in the data), bk (1 if on a list of confirmed bankruptcies). This is a clue, not a verified ticker history: about one company in eight has no candidate, and some candidates are wrong.
 
 `format-test` holds files used to test download speed.
+
+## CUSIP numbers per company (folder `match`)
+
+`cik_cusip6_history.csv` lists, per SEC company number, each 6-character CUSIP (issuer part) found on its ownership filings (Schedules 13G and 13D): the newest filing and up to three earlier ones. `cik_cusip_history_filings.csv` names the filings read. A company can have several rows because CUSIPs change over time.
