@@ -32,6 +32,10 @@ Same data, uncompressed and smaller, for tools that can only read plain text.
 - `v_<quarter>.csv`: one row per number. Columns: i (report row number in the matching r file), t (item code, see `tags.csv`), q (quarters covered, 0 for a point in time), v (value), u (unit; blank means USD).
 - Only current-period numbers are kept (the number's period end equals the report's period). The prior-period figures each report repeats for comparison are dropped.
 
+### Wider item list (from 2026-11-21)
+
+`sec-compact` now holds 124 items instead of 43 (see `tags.csv`; the first 43 codes are unchanged). The extra items are the other names companies use for debt, interest, depreciation, costs, capital spending, cash, per-share earnings and dividends. `sec-trimmed` still holds the first 43 items only.
+
 ## Company number to ticker candidates (folder `match`)
 
 `cik_ticker_candidates.csv` links SEC company numbers to ticker candidates taken from the leading letters of each report's XBRL file name. Columns: cik, ticker, first and last (dates of the first and last report using that name), last_any (the company's last report in the data), bk (1 if on a list of confirmed bankruptcies). This is a clue, not a verified ticker history: about one company in eight has no candidate, and some candidates are wrong.
