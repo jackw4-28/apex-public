@@ -23,3 +23,17 @@ A quarter here is the quarter in which the SEC received the report, not the comp
 - September 2016 holds only a small share of the reports filed that month. August to September 2012 and March 2016 are also thin.
 - Not every filer is present in every quarter.
 - Nothing has been corrected or restated; numbers are as filed.
+
+## Compact plain-text version (folder `sec-compact`)
+
+Same data, uncompressed and smaller, for tools that can only read plain text.
+
+- `r_<quarter>.csv`: one row per report. Columns: i (row number within the quarter), cik, form, period, fp, filed.
+- `v_<quarter>.csv`: one row per number. Columns: i (report row number in the matching r file), t (item code, see `tags.csv`), q (quarters covered, 0 for a point in time), v (value), u (unit; blank means USD).
+- Only current-period numbers are kept (the number's period end equals the report's period). The prior-period figures each report repeats for comparison are dropped.
+
+## Company number to ticker candidates (folder `match`)
+
+`cik_ticker_candidates.csv` links SEC company numbers to ticker candidates taken from the leading letters of each report's XBRL file name. Columns: cik, ticker, first and last (dates of the first and last report using that name), last_any (the company's last report in the data), bk (1 if on a list of confirmed bankruptcies). This is a clue, not a verified ticker history: about one company in eight has no candidate, and some candidates are wrong.
+
+`format-test` holds files used to test download speed.
